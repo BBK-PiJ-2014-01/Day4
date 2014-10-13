@@ -1,0 +1,28 @@
+// Mortgage calculator
+
+Mortgage myMortgage = new Mortgage();
+
+print("Total amount borrowed: ");
+myMortgage.amountBorrowed = readDouble();
+print("Number of years to pay the mortgage back: ");
+myMortgage.mortgageYears = readInt();
+print("Interest rate: ");
+myMortgage.interestRate = readDouble();
+
+myMortgage.mortgageCalculator();
+
+println(myMortgage.amountBorrowed + " " + myMortgage.totalAmountPaid);
+
+class Mortgage {
+	double amountBorrowed;
+	int mortgageYears;
+	double interestRate;
+	double totalAmountPaid;
+	double yearlyAmountPaid;
+	double years;
+	
+	void mortgageCalculator () {
+		totalAmountPaid = amountBorrowed * (1+(this.interestRate/100));
+		
+	}
+}
