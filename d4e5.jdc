@@ -1,0 +1,20 @@
+// Binary and hexadecimal
+
+println("Please enter a number (decimal or hexadecimal): ");
+String input = System.console.readLine();
+
+if (input.substring(0,2).equals("0x"))
+	println(hexadecimal2decimal(input));
+else
+	println(decimal2hexadecimal(input));
+
+String decimal2hexadecimal(String number) {
+	String hexadecimalNumber = "";
+	return(hexadecimalNumber);
+}
+
+String hexadecimal2decimal(String number) {
+	String decimalNumber = "";
+	return(decimalNumber);
+}
+	
