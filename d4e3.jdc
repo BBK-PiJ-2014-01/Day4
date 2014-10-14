@@ -5,7 +5,7 @@ Mortgage myMortgage = new Mortgage();
 print("Total amount borrowed: ");
 myMortgage.amountBorrowed = readDouble();
 print("Number of years to pay the mortgage back: ");
-myMortgage.mortgageYears = readInt();
+myMortgage.mortgageLength = readInt();
 print("Interest rate: ");
 myMortgage.interestRate = readDouble();
 
@@ -15,7 +15,7 @@ println(myMortgage.amountBorrowed + " " + myMortgage.totalAmountPaid);
 
 class Mortgage {
 	double amountBorrowed;
-	int mortgageYears;
+	int mortgageLength;
 	double interestRate;
 	double totalAmountPaid;
 	double yearlyAmountPaid;
