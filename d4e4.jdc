@@ -1,0 +1,33 @@
+int option = 0;
+boolean finished = false;
+
+do {
+	println("Please choose an option: ");
+	println("1: Convert a binary number to the corresponding number in decimal");
+	println("2: Convert a decimal number to the corresponding binary number");
+	println("9: Exit the application");
+	option = readInt();
+
+	switch(option) {
+	case 1:
+		// binary2decimal(String);
+		break;
+	case 2: 
+		// decimal2binary(int);
+		break;
+	default:
+		println("Not a valid option");
+		break;
+	}
+} while(!finished);
+
+int binary2decimal(String binaryNumber) {
+	int decimalNumber = 0;
+	return(decimalNumber);
+}
+
+int decimal2binary(int decimalNumber) {
+	int binaryNumber = 0;
+	return(binaryNumber);
+}
+
