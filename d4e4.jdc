@@ -7,13 +7,20 @@ do {
 	println("2: Convert a decimal number to the corresponding binary number");
 	println("9: Exit the application");
 	option = readInt();
-
+	
 	switch(option) {
 	case 1:
-		// binary2decimal(String);
+		print("Enter a binary number: ");
+		String input1 = System.console().readLine();
+		println(binary2decimal(input1));
 		break;
 	case 2: 
-		// decimal2binary(int);
+		print("Enter a decimal number: ");
+		int input2 = readInt();
+		println(decimal2binary(input2));
+		break;
+	case 9:
+		finished = true;
 		break;
 	default:
 		println("Not a valid option");
@@ -23,11 +30,26 @@ do {
 
 int binary2decimal(String binaryNumber) {
 	int decimalNumber = 0;
+	int power = binaryNumber.length()-1;
+	for (int i=0;i<binaryNumber.length();i++) {
+		decimalNumber += Integer.parseInt(binaryNumber.substring(i,i+1))*Math.pow(2,power);
+		power--;
+	}
 	return(decimalNumber);
 }
 
-int decimal2binary(int decimalNumber) {
-	int binaryNumber = 0;
+String decimal2binary(int decimalNumber) {
+	String binaryNumber = "";
+	int decimal = decimalNumber;
+	int carry = 0;
+	do {
+		carry = decimal % 2;
+		decimal = decimal / 2 ;
+		binaryNumber = binaryNumber + carry;
+		println(carry);
+		println(decimal); 
+		println(binaryNumber);
+	} while (decimal == 0);
 	return(binaryNumber);
 }
 
