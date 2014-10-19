@@ -13,7 +13,7 @@ if (i2.isEven()) {
 } else {
 	println("undefined!! Your code is buggy");
 }
-int parsedInt = Integer.parseInt(i2.toString2());
+int parsedInt = Integer.parseInt(i2.toString());
 if (parsedInt == i2.getValue()) {
 	println("Your toString() method seems to work fine.");
 }
@@ -47,7 +47,7 @@ class Integer2 {
 		println(value);
 	}
 
-	String toString2() {
+	public String toString() {
 		String output = "";
 		output = output + value;
 		return(output);
