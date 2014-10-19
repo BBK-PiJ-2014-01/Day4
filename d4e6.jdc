@@ -14,7 +14,7 @@ myPoint.moveTo(5,5);
 println("Move to (5,5): " + myPoint.x + " " + myPoint.y);
 myPoint.moveTo(aPoint);
 println("Move to another point (2,2): " + myPoint.x + " " + myPoint.y);
-Point myPointClone = myPoint.clone();
+Point myPointClone = myPoint.clone2();
 println("Clone coordinates: " + myPointClone.x + " " + myPointClone.y);
 Point myPointOpposite = myPoint.opposite();
 println("Opposite coordinates: " + myPointOpposite.x + " " + myPointOpposite.y);
@@ -47,7 +47,7 @@ class Point {
 		this.y = point.y;
 	}
 
-	Point clone() {
+	Point clone2() {
 		Point point = new Point();
 		point.x = this.x;
 		point.y = this.y;
