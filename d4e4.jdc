@@ -39,17 +39,17 @@ int binary2decimal(String binaryNumber) {
 }
 
 String decimal2binary(int decimalNumber) {
+	String interimBinaryNumber = "";
 	String binaryNumber = "";
 	int decimal = decimalNumber;
 	int carry = 0;
 	do {
 		carry = decimal % 2;
 		decimal = decimal / 2 ;
-		binaryNumber = binaryNumber + carry;
+		interimBinaryNumber = interimBinaryNumber + carry;
 		println(carry);
 		println(decimal); 
-		println(binaryNumber);
+		println(interimBinaryNumber);
 	} while (decimal == 0);
 	return(binaryNumber);
 }
-

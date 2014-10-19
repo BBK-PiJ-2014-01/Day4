@@ -1,7 +1,7 @@
 // Binary and hexadecimal
 
 println("Please enter a number (decimal or hexadecimal): ");
-String input = System.console.readLine();
+String input = System.console().readLine();
 
 if (input.substring(0,2).equals("0x"))
 	println(hexadecimal2decimal(input));
@@ -17,4 +17,3 @@ String hexadecimal2decimal(String number) {
 	String decimalNumber = "";
 	return(decimalNumber);
 }
-	
