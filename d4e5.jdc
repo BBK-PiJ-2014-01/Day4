@@ -4,16 +4,47 @@ println("Please enter a number (decimal or hexadecimal): ");
 String input = System.console().readLine();
 
 if (input.substring(0,2).equals("0x"))
-	println(hexadecimal2decimal(input));
+	println(hexadecimal2decimal(input.substring(2)));
 else
 	println(decimal2hexadecimal(input));
 
-String decimal2hexadecimal(String number) {
+int hexadecimal2decimal (String number) {
+	int decimalNumber = 0;
+	int power = number.length()-1;
+	for (int i=0;i<number.length();i++) {
+		int decimalTemp = 0;
+		switch(number.charAt(i)) {
+			case 'a':
+				decimalTemp = 10;
+				break;
+			case 'b':
+				decimalTemp = 11;
+				break;
+			case 'c':
+				decimalTemp = 12;
+				break;
+			case 'd':
+				decimalTemp = 13;
+				break;
+			case 'e':
+				decimalTemp = 14;
+				break;
+			case 'f':
+				decimalTemp = 15;
+				break;
+			default:
+				decimalTemp = Integer.parseInt(number.substring(i,i+1));
+				break;
+		}
+		decimalNumber += decimalTemp * (int) Math.pow(16,power);
+		power--;
+	}
+	return(decimalNumber);
+}
+
+static String decimal2hexadecimal(String number) {
 	String hexadecimalNumber = "";
 	return(hexadecimalNumber);
 }
 
-String hexadecimal2decimal(String number) {
-	String decimalNumber = "";
-	return(decimalNumber);
-}
+
