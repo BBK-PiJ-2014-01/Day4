@@ -12,12 +12,12 @@ do {
 	case 1:
 		print("Enter a binary number: ");
 		String input1 = System.console().readLine();
-		println(binary2decimal(input1));
+		println("Decimal number is: " + binary2decimal(input1));
 		break;
 	case 2: 
 		print("Enter a decimal number: ");
 		int input2 = readInt();
-		println(decimal2binary(input2));
+		println("Binary number is: " + decimal2binary(input2));
 		break;
 	case 9:
 		finished = true;
@@ -38,7 +38,7 @@ int binary2decimal(String binaryNumber) {
 	return(decimalNumber);
 }
 
-String decimal2binary(int decimalNumber) {
+static String decimal2binary(int decimalNumber) {
 	String interimBinaryNumber = "";
 	String binaryNumber = "";
 	int decimal = decimalNumber;
@@ -46,10 +46,9 @@ String decimal2binary(int decimalNumber) {
 	do {
 		carry = decimal % 2;
 		decimal = decimal / 2 ;
-		interimBinaryNumber = interimBinaryNumber + carry;
-		println(carry);
-		println(decimal); 
-		println(interimBinaryNumber);
-	} while (decimal == 0);
+		interimBinaryNumber += carry;	
+	} while (decimal != 0);
+	for (int i=interimBinaryNumber.length()-1;i>=0;i--)
+		binaryNumber += interimBinaryNumber.charAt(i);
 	return(binaryNumber);
 }
