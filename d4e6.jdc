@@ -1,34 +1,63 @@
+// More on points
 
+Point myPoint = new Point();
+myPoint.x = 5;
+myPoint.y = 5;
 
+Point aPoint = new Point();
+aPoint.x = 2;
+aPoint.y = 2;
 
-
+println("Distance to point: " + myPoint.distanceTo(aPoint));
+println("Distance to origin: " + myPoint.distanceToOrigin());
+myPoint.moveTo(5,5);
+println("Move to (5,5): " + myPoint.x + " " + myPoint.y);
+myPoint.moveTo(aPoint);
+println("Move to another point (2,2): " + myPoint.x + " " + myPoint.y);
+Point myPointClone = myPoint.clone();
+println("Clone coordinates: " + myPointClone.x + " " + myPointClone.y);
+Point myPointOpposite = myPoint.opposite();
+println("Opposite coordinates: " + myPointOpposite.x + " " + myPointOpposite.y);
 
 
 class Point {
 	double x;
 	double y;
 
-	distanceTo(Point) {
-
+	double distanceTo(Point point) {
+		double distance = 0;
+		distance = Math.sqrt(Math.pow(this.x-point.x,2)+Math.pow(this.y-point.y,2));
+		return distance;
 	}
 
-	distanceToOrigin() {
-
+	double distanceToOrigin() {
+		Point origin = new Point();
+		origin.x = 0;
+		origin.y = 0;
+		return(distanceTo(origin));
 	}
 
-	moveTo(double x, double y) {
-
+	void moveTo(double x, double y) {
+		this.x = x;
+		this.y = y;
 	}
 
-	moveTo(Point) {
-
+	void moveTo(Point point) {
+		this.x = point.x;
+		this.y = point.y;
 	}
 
-	clone() {
-
+	Point clone() {
+		Point point = new Point();
+		point.x = this.x;
+		point.y = this.y;
+		return(point);
 	}
 
-	opposite() {
-
-	}
+	Point opposite() {
+		Point point = new Point();
+		point.x = -this.x;
+		point.y = -this.y;
+		return(point);
+	} 
 }
