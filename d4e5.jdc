@@ -43,8 +43,40 @@ int hexadecimal2decimal (String number) {
 }
 
 static String decimal2hexadecimal(String number) {
-	String hexadecimalNumber = "";
+	String hexadecimalNumber = "0x";
+	String interimHexadecimalNumber = "";
+	int decimal = Integer.parseInt(number);
+	int carry = 0;
+	String carryString = "";
+	do {
+		carry = decimal % 16;
+		decimal = decimal / 16;
+		switch (carry) {
+			case 10:
+				carryString = "a";
+				break;
+			case 11:
+				carryString = "b";
+				break;
+			case 12:
+				carryString = "c";
+				break;
+			case 13:
+				carryString = "d";
+				break;
+			case 14:
+				carryString = "e";
+				break;
+			case 15:
+				carryString = "f";
+				break;
+			default:
+				carryString = Integer.toString(carry);
+				break;
+		}	
+		interimHexadecimalNumber += carryString;	
+	} while (decimal != 0);
+	for (int i=interimHexadecimalNumber.length()-1;i>=0;i--)
+		hexadecimalNumber += interimHexadecimalNumber.charAt(i);
 	return(hexadecimalNumber);
 }
-
-
